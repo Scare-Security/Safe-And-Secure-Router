@@ -134,3 +134,13 @@ module Responder
     end
 end
 ```
+
+the list `server_Locations` tells the server what file is allowed and what filepath the user can access via post or get request. Make sure you define the request path to get to that folder. For example if you make a request to `/` the server knows to load the `main.html` file that is inside of the path and list. Make sure to also make no controversal names or filepaths. if two are the same either the debugger will output massive logs or crystal will error out.
+
+# Features
+
+* Pre generation: If the file `main.html` is not in the same directory, deleted or is not found the server will re generate a new one, once you reload the server it will be loaded as a file.
+
+* Debugger: The server has standard debugger on it, where when a persons or robot makes a request to the server the debugger will log the filepath, the request and response headers, the response codes and even file information of the requested file. If you use this in production make sure you build an IDS to check and verify the file or to check for a very specific file.
+
+
